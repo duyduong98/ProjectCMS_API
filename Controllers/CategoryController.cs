@@ -46,7 +46,6 @@ namespace ProjectCMS.Controllers
         }
 
         
-        // return Ok(new { message = ""});
 
         // Get a category by id
         [HttpGet]

@@ -68,7 +68,7 @@ namespace ProjectCMS.Controllers
             {
                 _dbContext._comments.Remove(comment);
                 await _dbContext.SaveChangesAsync();
-                return Ok(await _dbContext._comments.ToListAsync());
+                return Ok(new { message = "Successfully deleted." });
             }
             return NotFound(new {message = "Comment does not exist." });
         }
@@ -86,7 +86,7 @@ namespace ProjectCMS.Controllers
                 {
                     comment.Content = newComment.Content;
                     await _dbContext.SaveChangesAsync();
-                    return Ok(await _dbContext._comments.ToListAsync());
+                    return Ok(new { message = "Successfully edited." });
                 }
                 return BadRequest(new {message = "Some value is not valid. Please retype the value." });
             }
